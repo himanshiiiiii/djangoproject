@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src='/static/script.js'></script>
+    <script src='/static/script2.js'></script>
+    
+</head>
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            <nav>
+                <ul id='MenuItems'>
+                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
+                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Register</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div id='login-form'class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'><b>Log In</b></button>
+                    <button type='button'onclick='register()'class='toggle-btn'><b>Register</b></button>
+                </div>
+                <form action="#" onsubmit="return validateForm()" id='login' class='input-group-login' name="myForm" method="post">
+                    <div class="design" id="email">
+                        <i class="fas fa-envelope"></i>
+                    <input type='email' name='eemail' class='input-field'placeholder='Email Id' required ><b><span class="formerror"></span></b>
+                </div>  
+                <div class="design" id="password">
+                    <i class="fas fa-lock"></i>
+                    <input type='password' name="passwd" class='input-field'placeholder='Enter Password' required><b><span class="formerror"></span></b>
+                </div>
+		    <input type='checkbox'class='check-box'><b><span class="pass">Remember Password</span></b>
+		    <button type='submit'class='submit-btn'>Submit</button>
+		 </form>
+		 <form action="#" onsubmit="return validateForms()" id='register' class='input-group-register'name="myForms" method="post">
+            <div class="design" id="fname">
+                <i class="fas fa-user"></i>
+		     <input type='text'name='name'class='input-field'placeholder='Name' required><b><span class="formserror"></span></b>
+            </div>
+            <div class="design" id="number">
+                <i class="fas fa-phone"></i>
+		     <input type='text'name='pnum'class='input-field'placeholder='Mobile Number' required><b><span class="formserror"></span></b>
+            </div>
+             <div class="design" id="gmail">
+                <i class="fas fa-envelope"></i>
+		     <input type='email' name='ggmail'class='input-field'placeholder='Email Id' required><b><span class="formserror"></span></b>
+             </div>
+             <div class="design" id="spassword">
+                <i class="fas fa-lock"></i>
+		     <input type='password'name='ppasswd'class='input-field'placeholder='Enter Password' required><b><span class="formserror"></span></b>
+           </div>
+           <div class="design" id="cpassword">
+            <i class="fas fa-lock"></i>
+		     <input type='password'name='cpasswd'class='input-field'placeholder='Confirm Password'  required><b><span class="formserror"></span></b>
+             </div>
+		     <input type='checkbox'class='check-box' required><b><span>I agree to the terms and conditions</span></b>
+                    <button type='submit'class='submit-btn'>Register</button>
+	         </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+	<script>
+    var modal =document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+     var mod = document.getElementById('register');
+        window.onclick = function(event) 
+        {
+            if (event.target == mod) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
